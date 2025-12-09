@@ -13,11 +13,13 @@ namespace PieShop.API.Controllers
     {
         private readonly IPieRepository _repository;
         private readonly IMapper _mapper;
+        private readonly IWebHostEnvironment _environment;
 
-        public PiesController(IPieRepository repository, IMapper mapper)
+        public PiesController(IPieRepository repository, IMapper mapper, IWebHostEnvironment environment)
         {
             _repository = repository;
             _mapper = mapper;
+            _environment = environment;
         }
 
         [HttpGet]
